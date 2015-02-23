@@ -4,9 +4,10 @@
 
 syn match jaiWord "\h\w*" " Prevent Number from matching inside word
 
-syn keyword jaiKeyword cast defer delete else enum for free if it it_index
-syn keyword jaiKeyword new return struct then using while
-syn keyword jaiKeyword SOA
+syn keyword jaiKeyword cast break continue defer delete else enum for
+syn keyword jaiKeyword free if it it_index
+syn keyword jaiKeyword new return sizeof struct then using while
+syn keyword jaiKeyword SOA CAST
 syn keyword jaiLiteral true false null
 syn keyword jaiType float float16 float32 float64
 syn keyword jaiType int s64 s32 s16 s8 u64 u32 u16 u8
