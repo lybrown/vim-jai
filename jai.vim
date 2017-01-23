@@ -33,6 +33,8 @@ syn match jaiOperation "/"
 syn match jaiOperation "%"
 syn match jaiOperation "&&"
 syn match jaiOperation "||"
+syn match jaiOperation "=>"
+syn match jaiOperation "\$\$"
 syn match jaiStatement "+="
 syn match jaiStatement "-="
 syn match jaiStatement "*="
@@ -42,14 +44,16 @@ syn match jaiFunction "->"
 syn match jaiNote "@[^ \t\n]\+"
 syn match jaiPoly "\$\w\+"
 syn match jaiDirective "#\w\+"
-syn match jaiNumber "[-+]\?\(\d\+\(\.\d\+\)\?\|\.\d\+\)\([eE][-+]\?\d\+\)\?"
-syn match jaiNumber "0x[0-9A-Fa-f]\+"
+syn match jaiNumber "[-+]\?\(\d[\d_]*\(\.[\d_]\+\)\?\|\.[\d_]\+\)\([eE][-+]\?\d\+\)\?"
+syn match jaiNumber "0x[0-9A-Fa-f_]\+"
+syn match jaiHexFloat "0h[0-9A-Fa-f_]\+"
 syn match jaiTrailingSpace " \+$"
 syn match jaiComment "//.*"
 syn region jaiMultilineComment start=/\/\*/ end=/\*\// contains=jaiMultilineComment
 syn region jaiString start=/"/ skip=/\\"/ end=/"/
 
 hi def link jaiNumber Number
+hi def link jaiHexFloat Number
 "hi def link jaiIdent Identifier
 hi def link jaiKeyword Keyword
 hi def link jaiStatement Identifier
